@@ -1,3 +1,5 @@
+'use strict'
+
 const images = [
   {
     url: "https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?dpr=2&h=750&w=1260",
@@ -24,3 +26,28 @@ const images = [
     alt: "Lighthouse Coast Sea",
   }
 ];
+
+
+const gallery = document.querySelector(".gallery");
+const newAddingList = (arry) => {
+  for (const image of arry) {
+    const line = `<li> <img src="" alt=""> </li>`;
+    gallery.insertAdjacentHTML("afterbegin", line);
+    const img = document.querySelector(".gallery li img");
+    img.src = image.url;
+    img.alt = image.alt
+    img.width = "360";
+    img.height = "300";
+  }
+}
+newAddingList(images)
+
+
+
+const cssPhotoStyles = document.querySelector(".gallery");
+cssPhotoStyles.style.display = "flex";
+cssPhotoStyles.style.flexWrap = "wrap"
+cssPhotoStyles.style.gap = "24px";
+cssPhotoStyles.style.rowGap = "48px";
+cssPhotoStyles.style.width = "1128px"
+cssPhotoStyles.style.height = "648px"
