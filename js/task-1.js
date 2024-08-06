@@ -33,3 +33,5 @@ const itemCategoryTechnologies = document.querySelector(".item .title-technologi
 console.log(`Category: ${itemCategoryTechnologies.textContent}`)
 const itemElementsTechnologies = document.querySelectorAll(".item .item-ul-technologies li")
 numberOfElements(itemElementsTechnologies)
+
+

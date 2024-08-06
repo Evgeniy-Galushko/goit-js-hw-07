@@ -29,8 +29,8 @@ const images = [
 
 
 const gallery = document.querySelector(".gallery");
-const newAddingList = (arry) => {
-  for (const image of arry) {
+const newAddingList = (array) => {
+  for (const image of array) {
     const line = `<li> <img src="" alt=""> </li>`;
     gallery.insertAdjacentHTML("afterbegin", line);
     const img = document.querySelector(".gallery li img");
@@ -40,14 +40,13 @@ const newAddingList = (arry) => {
     img.height = "300";
   }
 }
+
 newAddingList(images)
 
-
-
-const cssPhotoStyles = document.querySelector(".gallery");
-cssPhotoStyles.style.display = "flex";
-cssPhotoStyles.style.flexWrap = "wrap"
-cssPhotoStyles.style.gap = "24px";
-cssPhotoStyles.style.rowGap = "48px";
-cssPhotoStyles.style.width = "1128px"
-cssPhotoStyles.style.height = "648px"
+const cssImgStyles = document.querySelector(".gallery");
+cssImgStyles.style.display = "flex";
+cssImgStyles.style.flexWrap = "wrap"
+cssImgStyles.style.gap = "24px";
+cssImgStyles.style.rowGap = "48px";
+cssImgStyles.style.width = "1128px"
+cssImgStyles.style.height = "648px"
