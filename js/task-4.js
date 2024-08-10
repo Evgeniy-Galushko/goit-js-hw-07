@@ -6,7 +6,7 @@ const form = document.querySelector(".login-form")
 const events = (event) => {
   event.preventDefault();
   const forms = event.target;
-  const email = forms.inputs.trim();
+  const email = forms.elements.email.value.trim();
   const password = forms.elements.password.value.trim()
   if (email === "" || password === "") {
     return console.log('All form fields must be filled in')
