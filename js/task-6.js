@@ -19,7 +19,7 @@ const eventCreate = (event) => {
   const events = (event) => {}
   input.addEventListener("input", events)
   const number = input.value 
-  if (number <= 100  && number > 0) {
+  if (number > 0 && number <= 100) {
   createBoxes(number)
   } 
   input.value = " "
