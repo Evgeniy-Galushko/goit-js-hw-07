@@ -28,8 +28,8 @@ buttonCreate.addEventListener("click", eventCreate)
 
 function createBoxes(amount) {
   const divBoxes = document.querySelector("#boxes")
-  const div = document.createElement('div')
   for (let i = 1; i <= amount; i++) {
+    const div = document.createElement('div')
     if (i === 1) {
       divBoxes.append
       div.style.width = "30px";
@@ -44,8 +44,7 @@ function createBoxes(amount) {
   }
   
     divBoxes.style.display = "flex";
-    divBoxes.style.flexDirection = "row-reverse";
-    divBoxes.style.justifyContent = "left";
+    divBoxes.style.flexDirection = "row";
     divBoxes.style.gap = "25px";
     console.log()
   }
