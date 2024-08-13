@@ -22,28 +22,32 @@ const eventCreate = (event) => {
   if (number > 0 && number <= 100) {
   createBoxes(number)
   } 
-  input.value = " "
+  input.value = ""
 }
 buttonCreate.addEventListener("click", eventCreate)
-  
+
 function createBoxes(amount) {
   const divBoxes = document.querySelector("#boxes")
+  const div = document.createElement('div')
   for (let i = 1; i <= amount; i++) {
-    const div = document.createElement('div')
-      if (i === 1) {
-        divBoxes.prepend(div)
-        div.style.width = "30px";
-        div.style.height = "30px";
-      } else {
-        divBoxes.append(div)
-        div.style.width = `${30 + ((i-1) * 10)}px`;
-        div.style.height = `${30 + ((i - 1) * 10)}px`;
-            }
+    if (i === 1) {
+      divBoxes.append
+      div.style.width = "30px";
+      div.style.height = "30px";
+    } else {
+      divBoxes.append
+      div.style.width = `${30 + ((i-1) * 10)}px`;
+      div.style.height = `${30 + ((i - 1) * 10)}px`;
+    }
+    divBoxes.append(div)
     div.style.backgroundColor = getRandomHexColor()
   }
+  
     divBoxes.style.display = "flex";
-    divBoxes.style.flexDirection = "row";
+    divBoxes.style.flexDirection = "row-reverse";
+    divBoxes.style.justifyContent = "left";
     divBoxes.style.gap = "25px";
+    console.log()
   }
 /**
  * Очищает Div (class="div-boxes) от вновь созданных объектов.

@@ -28,20 +28,9 @@ const images = [
 ];
 
 const gallery = document.querySelector(".gallery");
-const line = `
-<li> <img src="https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?dpr=2&h=750&w=1260"
-alt="White and Black Long Fur Cat" width = "360" height = "300"> </li>
-<li> <img src="https://images.pexels.com/photos/213399/pexels-photo-213399.jpeg?dpr=2&h=750&w=1260"
-alt="Orange and White Koi Fish Near Yellow Koi Fish" width = "360" height = "300"> </li>
-<li> <img src="https://images.pexels.com/photos/219943/pexels-photo-219943.jpeg?dpr=2&h=750&w=1260"
-alt="Group of Horses Running" width = "360" height = "300"> </li>
-<li> <img src="https://cdn.pixabay.com/photo/2019/05/17/09/27/the-alps-4209272_1280.jpg"
-alt="Alpine Spring Meadows" width = "360" height = "300"> </li>
-<li> <img src="https://cdn.pixabay.com/photo/2019/05/16/21/10/landscape-4208255_1280.jpg"
-alt="Nature Landscape" width = "360" height = "300"> </li>
-<li> <img src="https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843_1280.jpg" 
-alt="Lighthouse Coast Sea" width = "360" height = "300"> </li>`
-gallery.insertAdjacentHTML("afterbegin", line);
+const line = images.map((image) => `<li> <img src=${image.url} alt=${image.alt} width = "360" height = "300"></li>`).join("")
+gallery.innerHTML = line;
+
 
 const cssImgStyles = document.querySelector(".gallery");
 cssImgStyles.style.display = "flex";
@@ -50,3 +39,4 @@ cssImgStyles.style.gap = "24px";
 cssImgStyles.style.rowGap = "48px";
 cssImgStyles.style.width = "1128px"
 cssImgStyles.style.height = "648px"
+
