@@ -30,19 +30,17 @@ function createBoxes(amount) {
   const divBoxes = document.querySelector("#boxes")
   for (let i = 1; i <= amount; i++) {
     const div = document.createElement('div')
-    if (i === 1) {
-      divBoxes.append
+    if (i <= 1) {
+      divBoxes.appendChild(div)
       div.style.width = "30px";
       div.style.height = "30px";
     } else {
-      divBoxes.append
+      divBoxes.appendChild(div)
       div.style.width = `${30 + ((i-1) * 10)}px`;
       div.style.height = `${30 + ((i - 1) * 10)}px`;
     }
-    divBoxes.append(div)
     div.style.backgroundColor = getRandomHexColor()
   }
-  
     divBoxes.style.display = "flex";
     divBoxes.style.flexDirection = "row";
     divBoxes.style.gap = "25px";
